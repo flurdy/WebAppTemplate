@@ -8,20 +8,25 @@
 	   http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-	<mvc:annotation-driven/>
+    <mvc:annotation-driven/>
 
-	<context:component-scan base-package="com.flurdy.grid.webapp.web" />
+    <context:component-scan base-package="com.flurdy.grid.webapp.web" />
 
 
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="prefix" value="/WEB-INF/view/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <!--
 	<bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
 		<property name="definitions">
 			<list>
 				<value>/WEB-INF/tiles/templates.xml</value>
 				<value>/WEB-INF/tiles/core.xml</value>
-				<!--
 				<value>/WEB-INF/tiles/error.xml</value>
 				<value>/WEB-INF/tiles/admin.xml</value>
-				-->
 			</list>
 		</property>
 	</bean>
@@ -29,5 +34,7 @@
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
 		<property name="viewClass" value="org.springframework.web.servlet.view.tiles2.TilesView"/>
 	</bean>
+
+        -->
 
 </beans>

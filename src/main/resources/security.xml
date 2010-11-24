@@ -29,6 +29,7 @@
         <logout logout-success-url="/" logout-url="/logout.do" />
         <access-denied-handler error-page="/error/accessDenied.html"/>
     </http>
+
 <!--
     <authentication-manager>
         <authentication-provider user-service-ref='userDetailsService'>
@@ -38,18 +39,11 @@
 		</authentication-provider>
     </authentication-manager>
 -->
-	<!-- <global-method-security secured-annotations="enabled" pre-post-annotations="enabled"/> -->
+	
 	<global-method-security pre-post-annotations="enabled"/>
 
 	<!--
 	<beans:bean id="userDetailsService" class=",..security.TravellerUserDetails" />
-	-->
-
-	<!--	<security:http auto-config="true" access-denied-page="/access.html">
-		<security:logout logout-url="/logout" logout-success-url="/" />
-		< - <security:concurrent-session-control max-sessions="1" /> - >
-		< - <security:remember-me key="" /> - >
-	</security:http>
 	-->
 
 	<security:authentication-provider>
