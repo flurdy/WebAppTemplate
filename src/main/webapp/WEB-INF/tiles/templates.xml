@@ -6,7 +6,8 @@
 <tiles-definitions>
 
 	<definition name="gridTemplate" template="/WEB-INF/views/nautical/grid.jsp">
-		<put-attribute name="headerTitle" type="string" value=""/>
+        <!--
+		<put-attribute name="pageTitle" type="string" value=""/>
 		<put-attribute name="bowTitle" type="string" value=""/>
 		<put-attribute name="version" type="string" value="v.0.0.1&amp;alpha;"/>
 		<put-attribute name="releaseStage" type="string" value="&amp;alpha;lpha"/>
@@ -18,6 +19,7 @@
 		<put-attribute name="starboard" type="string" value=""/>
 		<put-attribute name="cargoJQuery" type="string" value=""/>
                 <put-attribute name="debug" value="/WEB-INF/views/nautical/debug.jsp"/>
+        -->
 	</definition>
 
 	<definition name="adminTemplate" extends="gridTemplate">
