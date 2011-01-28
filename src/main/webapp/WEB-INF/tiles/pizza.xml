@@ -15,6 +15,10 @@
         <put-attribute name="cargo" value="/WEB-INF/views/pizza/Confirmation.jsp"/>
     </definition>
 
+    <definition name="pizza-adress" extends="gridTemplate">
+        <put-attribute name="cargo" value="/WEB-INF/views/pizza/NavnOgAdresse.jsp"/>
+    </definition>
+
 
 
 </tiles-definitions>

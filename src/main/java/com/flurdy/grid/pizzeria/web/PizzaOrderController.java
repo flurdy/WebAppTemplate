@@ -18,8 +18,15 @@ public class PizzaOrderController extends AbstractController {
     }
 
     @RequestMapping ("confirmation.html")
-    public ModelAndView confirmationHandel (int numberOfPizzas) {
+    public ModelAndView confirmationHandel (PizzaOrder order) {
         ModelAndView modelAndView = new ModelAndView("pizza-confirmation");
+        modelAndView.addObject("order", order);
+        return modelAndView;
+    }
+
+	 @RequestMapping ("adress.html")
+    public ModelAndView adressInput (int numberOfPizzas) {
+        ModelAndView modelAndView = new ModelAndView("pizza-adress");
         modelAndView.addObject("numberOfPizzas", numberOfPizzas);
         return modelAndView;
     }
@@ -29,8 +36,19 @@ public class PizzaOrderController extends AbstractController {
             @ModelAttribute("PizzaOrder") PizzaOrder pizzaOrder,
             BindingResult result) {
 
-        return "redirect:/order/confirmation.html?numberOfPizzas=" +
+        return "redirect:/order/adress.html?numberOfPizzas=" +
                 pizzaOrder.getQuantity();
+    }
+
+	 @RequestMapping (value={""}, method=RequestMethod.PUT)
+    public String orderConfirmation (
+            @ModelAttribute("PizzaOrder") PizzaOrder pizzaOrder,
+            BindingResult result) {
+
+        return "redirect:/order/confirmation.html?quantity=" +
+                pizzaOrder.getQuantity() +
+					 "&name=" + pizzaOrder.getName() +
+					 "&address=" + pizzaOrder.getAddress();
     }
 
 }

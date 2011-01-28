@@ -4,7 +4,10 @@
 
         <h1>Grandiosa Pizza!</h1>
         <form action="${pageContext.request.contextPath}/order" method="POST">
-            <input type="text" name="quantity" value="1"/>
+				<input type="hidden" name="_method" value="PUT" />
+            <input type="hidden" name="quantity" value="${numberOfPizzas}"/>
+				<p>Enter thou name!<input type="text" name="name" value=""/></p>
+				<p>Enter thine address!<input type="text" name="address" value=""/></p>
             <input type="submit" value="Order"/>
         </form>
 
